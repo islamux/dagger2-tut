@@ -7,7 +7,7 @@ import javax.inject.Inject;
 public class Coffee {
     private static final String TAG = "Coffee";
 
-    // If we want to use field injection, constructor injection, and method injection in the same time
+    // If we want to use the three ways of injections at the same time,field injection, constructor injection, and method injection in the same time
 
         // field injection
         @Inject
