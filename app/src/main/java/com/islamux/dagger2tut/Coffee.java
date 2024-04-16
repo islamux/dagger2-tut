@@ -13,13 +13,18 @@ public class Coffee {
         @Inject
        Farm farm;
 
-      // wihout field injection
+      // without field injection
        River river;
+
+       // from api or user input or stable value
+        int sugar;
 
        // constructor injection
     @Inject
-    public Coffee(River river) {
+    public Coffee(River river, int sugar) {
         this.river = river;
+        this.sugar = sugar;
+
     }
 
     // method injection
@@ -29,7 +34,7 @@ public class Coffee {
         Log.d(TAG, "Fathi connectElectricity: connecting ");
     }
     public String getCoffeeCup() {
-        return farm.getBeans() + "+" + river.getWater();
+        return farm.getBeans() + "+" + river.getWater() + "+sugar: " + sugar;
     }
 
 }

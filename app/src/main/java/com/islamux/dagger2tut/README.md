@@ -7,3 +7,5 @@
 # We create CoffeeModule to generate instance from the class we haven't access to it.
 
 # 2- @Provides above any function want to use it.
+
+# If we want to using inject dependencies from api or user:

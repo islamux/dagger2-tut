@@ -53,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
             2 - using filed injection is second practice because it cause capping classes in the class.
          */
 
-        CoffeeComponent component = DaggerCoffeeComponent.create();
+        CoffeeComponent component = DaggerCoffeeComponent.builder().coffeeModule(new CoffeeModule(2)).build(); // pass sugars to the module from the activity (user) (editText.text)
+        // CoffeeComponent component = DaggerCoffeeComponent.builder().build(); // without passing sugars to the module from the activity (user)
+
         // coffee.connectElectricity(); // boiler plate code so we don't need to write it again and again. then we can use only one time. inject function to inject the dependencies.
         component.inject(this); // to inject only one time in the activity withou using alot of instances.
 
