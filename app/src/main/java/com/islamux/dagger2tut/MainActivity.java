@@ -1,6 +1,5 @@
 package com.islamux.dagger2tut;
 
-
 import android.health.connect.changelog.ChangeLogTokenRequest;
 import android.nfc.Tag;
 import android.os.Bundle;
@@ -53,7 +52,10 @@ public class MainActivity extends AppCompatActivity {
             2 - using filed injection is second practice because it cause capping classes in the class.
          */
 
-        CoffeeComponent component = DaggerCoffeeComponent.builder().coffeeModule(new CoffeeModule(2)).build(); // pass sugars to the module from the activity (user) (editText.text)
+        // instead of passing value always 
+        CoffeeComponent component = DaggerCoffeeComponent.builder().sugar(4).milk(5).build(); // pass sugars to the module from the activity (user) (editText.text)
+        //CoffeeComponent component = DaggerCoffeeComponent.builder().coffeeModule(new CoffeeModule(2)).build(); // pass sugars to the module from the activity (user) (editText.text)
+
         // CoffeeComponent component = DaggerCoffeeComponent.builder().build(); // without passing sugars to the module from the activity (user)
 
         // coffee.connectElectricity(); // boiler plate code so we don't need to write it again and again. then we can use only one time. inject function to inject the dependencies.

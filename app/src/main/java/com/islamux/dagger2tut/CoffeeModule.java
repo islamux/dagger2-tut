@@ -6,22 +6,12 @@ import dagger.Provides;
 @Module
 public class CoffeeModule {
 
-    int sugar;
-
-    public CoffeeModule(int sugar) {
-        this.sugar = sugar;
-    }
-
-    @Provides
+    @Provides // class not mine
     River provideRiver() {
         // return instance from River class to make CoffeeComponent use it.
         return new River();
     }
 
-    @Provides
-    int provideSugar() {
-        return sugar;
-    }
 
     // if we have another func we make annotate @Provides above them.
 //    @Provides

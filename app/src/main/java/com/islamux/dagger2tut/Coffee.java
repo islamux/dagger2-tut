@@ -3,6 +3,7 @@ package com.islamux.dagger2tut;
 import android.util.Log;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 public class Coffee {
     private static final String TAG = "Coffee";
@@ -18,12 +19,14 @@ public class Coffee {
 
        // from api or user input or stable value
         int sugar;
+        int milk;
 
        // constructor injection
     @Inject
-    public Coffee(River river, int sugar) {
+    public Coffee(River river, @Sugar int sugar, @Milk int milk) {
         this.river = river;
         this.sugar = sugar;
+        this.milk = milk;
 
     }
 
@@ -34,7 +37,7 @@ public class Coffee {
         Log.d(TAG, "Fathi connectElectricity: connecting ");
     }
     public String getCoffeeCup() {
-        return farm.getBeans() + "+" + river.getWater() + "+sugar: " + sugar;
+        return farm.getBeans() + "+" + river.getWater() + "+sugar: " + sugar + "+milk: " + milk;
     }
 
 }
