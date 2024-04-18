@@ -25,3 +25,8 @@ What if you need custom tools specific to your house (application) or the builde
 
 @Component.Builder: This annotation creates a builder interface for your component. You can use this builder to customize which tools are included in the toolbox, just like specifying the exact tools needed for your house construction.
 @BindInstance: This annotation is used within methods in the builder interface. It allows you to provide your own instance of a specific dependency, overriding what Dagger might provide by default. It's like bringing your own special tool for a particular task during construction.
+
+# 4. @Singleton 
+when i want to  create objects that exist as a single instance throughout the lifecycle of a specific component. 
+@Singleton above the class that we own
+@Singleton above the module that provide us with the class that we wont own.

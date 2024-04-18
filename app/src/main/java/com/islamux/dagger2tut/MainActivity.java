@@ -16,7 +16,7 @@ import javax.inject.Inject;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     @Inject
-    Coffee coffee;
+    Coffee coffee, coffee2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +53,16 @@ public class MainActivity extends AppCompatActivity {
          */
 
         // instead of passing value always 
-        CoffeeComponent component = DaggerCoffeeComponent.builder().sugar(4).milk(5).build(); // pass sugars to the module from the activity (user) (editText.text)
-        //CoffeeComponent component = DaggerCoffeeComponent.builder().coffeeModule(new CoffeeModule(2)).build(); // pass sugars to the module from the activity (user) (editText.text)
+        CoffeeComponent component = ((MainApplication)getApplication()).getCoffeeComponent(); // get one instance only from Farm class using MainApplication class.
+
+                //CoffeeComponent component = DaggerCoffeeComponent.builder().coffeeModule(new CoffeeModule(2)).build(); // pass sugars to the module from the activity (user) (editText.text)
 
         // CoffeeComponent component = DaggerCoffeeComponent.builder().build(); // without passing sugars to the module from the activity (user)
 
         // coffee.connectElectricity(); // boiler plate code so we don't need to write it again and again. then we can use only one time. inject function to inject the dependencies.
         component.inject(this); // to inject only one time in the activity withou using alot of instances.
 
-        Log.d(TAG, "FATHI onCreate: " +  coffee.getCoffeeCup());
+        Log.d(TAG, "FATHI onCreate: " +  coffee.getCoffeeCup() + "farm for coffee" + coffee.river + "\n farm for coffe2" + coffee2.river) ;
 
     }
 }

@@ -4,15 +4,15 @@ import android.util.Log;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 public class Coffee {
     private static final String TAG = "Coffee";
 
-    // If we want to use the three ways of injections at the same time,field injection, constructor injection, and method injection in the same time
-
+        // If we want to use the three ways of injections at the same time,field injection, constructor injection, and method injection in the same time
         // field injection
         @Inject
-       Farm farm;
+        Farm farm;
 
       // without field injection
        River river;

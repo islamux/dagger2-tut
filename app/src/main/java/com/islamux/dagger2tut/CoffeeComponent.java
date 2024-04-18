@@ -1,11 +1,11 @@
 package com.islamux.dagger2tut;
 
 
-import javax.inject.Named;
+import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
-
+@Singleton // because it depends on Farm also.
 @Component(modules = CoffeeModule.class /*,Module2.class, Module3.class*/) //tell dagger to use CoffeeModule
 public interface CoffeeComponent {
 
